@@ -209,7 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const p = self.progress;
         const sceneSec2 = document.getElementById('scene-hero-transition');
         if (sceneSec2) {
-          sceneSec2.style.backgroundColor = p > 0.45 ? '#101A2D' : '#070B14';
+          sceneSec2.style.backgroundColor = p > 0.45 ? '#0D1C20' : '#060F12';
         }
         if (caseGlint) {
           caseGlint.style.opacity = (p > 0.15 && p < 0.5) ? '1' : '0';
@@ -439,10 +439,10 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const matBgs = {
-    metal: '#070B14',
-    sapphire: '#0A1424',
-    dial: '#060E1A',
-    leather: '#0B0E14'
+    metal: '#060F12',
+    sapphire: '#0D1C20',
+    dial: '#071519',
+    leather: '#091316'
   };
 
   function activateMaterial(mat) {
