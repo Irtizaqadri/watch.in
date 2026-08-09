@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ORBIT — Time, Reimagined | Interactive Horology Film</title>
+  <meta name="description" content="An interactive luxury digital watch film. Experience Swiss horology, orbital motion, and champagne titanium engineering.">
+  <meta name="keywords" content="ORBIT, Luxury Watch, Horology, Digital Watch Film, Swiss Movement, Interactive Experience, Champagne Titanium">
+
+  <!-- OpenGraph Social Sharing Metadata -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ORBIT — Time, Reimagined">
+  <meta property="og:description" content="An interactive luxury digital watch film exploring Swiss horology, orbital motion, and precision engineering.">
+  <meta property="og:image" content="images/orbit-08-hero.png">
+
+  <!-- Twitter Card Metadata -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ORBIT — Time, Reimagined">
+  <meta name="twitter:description" content="An interactive luxury digital watch film exploring Swiss horology and orbital motion.">
+  <meta name="twitter:image" content="images/orbit-08-hero.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+  
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
+</head>
+<body class="">
+
+  <!-- Right-Edge Champagne Scroll Progress Indicator Bar -->
+  <div class="scroll-progress-bar" id="scrollProgress"></div>
+
+  <!-- Permanent Fixed Header & Navigation -->
+  <header class="fixed-nav" id="mainHeader">
+    <a href="#scene-hero" class="nav-brand" data-cursor="nav">ORBIT</a>
+    
+    <!-- Desktop Center Nav Links -->
+    <nav class="nav-center-menu">
+      <a href="#scene-built-around-time" class="nav-link active" data-cursor="nav">COLLECTION</a>
+      <a href="#scene-mechanical" class="nav-link" data-cursor="nav">MOVEMENT</a>
+      <a href="#scene-material-journey" class="nav-link" data-cursor="nav">CRAFT</a>
+      <a href="#scene-hero-transition" class="nav-link" data-cursor="nav">THE ORBIT</a>
+    </nav>
+
+    <!-- Desktop Right Actions & Mobile Toggle -->
+    <div class="nav-right-actions">
+      <button class="btn-mobile-toggle" id="btnMobileToggle" data-cursor="nav">MENU</button>
+      <a href="#scene-final-product" class="btn-discover-nav" id="btnDiscoverNav" data-cursor="open">DISCOVER →</a>
+    </div>
+  </header>
+
+  <!-- Mobile Full-Screen Navigation Overlay -->
+  <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+    <button class="btn-close-mobile" id="btnCloseMobile">✕</button>
+
+    <div class="mobile-menu-links">
+      <a href="#scene-hero" class="mobile-menu-link">ORBITAL BIRTH</a>
+      <a href="#scene-watch-alive" class="mobile-menu-link">WATCH COMES ALIVE</a>
+      <a href="#scene-built-around-time" class="mobile-menu-link">COLLECTION</a>
+      <a href="#scene-mechanical" class="mobile-menu-link">MECHANISM</a>
+      <a href="#scene-orbital-field" class="mobile-menu-link">ORBITAL FIELD</a>
+      <a href="#scene-material-journey" class="mobile-menu-link">MATERIAL JOURNEY</a>
+      <a href="#scene-human-moment" class="mobile-menu-link">HUMAN MOMENT</a>
+      <a href="#scene-final-product" class="mobile-menu-link">DISCOVER ORBIT</a>
+    </div>
+  </div>
+
+  <!-- Main Digital Watch Film Experience Container -->
+  <main class="film-container">
+
+    <!-- ==========================================================================
+         SECTION 1: HERO SCENE — CANVAS FRAME SEQUENCE (UNTOUCHED)
+         ========================================================================== -->
+    <section class="hero-scene" id="scene-hero" data-bg="#070B14">
+      <div class="pinned-stage">
+        <!-- Canvas for 200 frame scroll scrubbing -->
+        <canvas id="hero-canvas"></canvas>
+
+        <!-- Hero Sequential Typography Overlays -->
+        <div class="hero-text-overlay" id="heroText1">
+          <h1 class="editorial-statement">ORBIT</h1>
+          <p class="editorial-sub">TIME, REIMAGINED</p>
+        </div>
+
+        <div class="hero-text-overlay" id="heroText2">
+          <h2 class="editorial-statement">TIME HAS NO <br><span class="accent">CENTER</span>.</h2>
+          <p class="editorial-sub">AN ASTRONOMICAL PERSPECTIVE</p>
+        </div>
+
+        <div class="hero-text-overlay" id="heroText3">
+          <h2 class="editorial-statement">PRECISION, IN <br><span class="accent">MOTION</span>.</h2>
+          <p class="editorial-sub">ENGINEERED HOROLOGY</p>
+        </div>
+
+        <div class="hero-text-overlay" id="heroText4">
+          <h2 class="editorial-statement">TIME, <br><span class="accent">REIMAGINED</span>.</h2>
+          <p class="editorial-sub">ORBITAL GEOMETRY</p>
+        </div>
+
+        <div class="hero-text-overlay" id="heroText5">
+          <h2 class="editorial-statement">A STUDY IN <br><span class="accent">PRECISION</span>.</h2>
+          <p class="editorial-sub">SWISS CRAFTSMANSHIP</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 2: THE WATCH AWAKENS (SECOND HERO COMMERCIAL SHOT)
+         ========================================================================== -->
+    <section class="hero-scene" id="scene-hero-transition" data-bg="#070B14">
+      <div class="pinned-stage">
+        <div class="transition-orbit-ring" id="transitionOrbitRing"></div>
+        <div class="transition-watch-container" data-cursor="explore" id="watchAwakensContainer">
+          <img src="images/orbit-08-hero.png" alt="ORBIT Master Watch" class="transition-watch-img" id="transitionWatchImg">
+          <div class="case-champagne-glint" id="caseGlint"></div>
+          <div class="sapphire-lunar-reflection" id="sapphireGlint"></div>
+        </div>
+
+        <!-- Left-Aligned Primary Editorial Statement -->
+        <div class="left-content-block" style="top: 25vh;">
+          <div class="technical-label">01 // THE WATCH AWAKENS</div>
+          <h2 class="editorial-statement" id="transitionStatement">TIME<br>HAS<br><span class="accent">MOTION</span>.</h2>
+        </div>
+
+        <!-- Lower Negative Space Specifications -->
+        <div class="section2-specs-footer" id="sec2Specs">
+          <span>PRECISION AUTOMATIC</span>
+          <span class="dot-sep">•</span>
+          <span>42MM CASE</span>
+          <span class="dot-sep">•</span>
+          <span>SAPPHIRE CRYSTAL</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 3: SECOND HERO — PRODUCT MOTION
+         ========================================================================== -->
+    <section class="hero-scene" id="scene-watch-alive" data-bg="#08111F">
+      <div class="pinned-stage">
+        <div class="second-hero-viewport" data-cursor="explore">
+          <video src="orbit-hero.mp4" id="productMotionVideo" class="second-hero-video" autoplay muted loop playsinline></video>
+        </div>
+
+        <div class="left-content-block" style="bottom: 12vh;">
+          <div class="technical-label">01 // PRODUCT MOTION</div>
+          <h2 class="editorial-statement" id="secondHeroStatement">THE WATCH <br><span class="accent">AWAKENS</span>.</h2>
+          <p class="editorial-sub">REVEALING THE ARCHITECTURE WITHIN</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         WATCH OBJECT SCENE — BUILT AROUND TIME
+         ========================================================================== -->
+    <section class="hero-scene" id="scene-built-around-time" data-bg="#070B14">
+      <div class="pinned-stage">
+        <div class="object-watch-wrapper" data-cursor="explore">
+          <img src="images/orbit-08-hero.png" alt="ORBIT Master Watch" class="object-watch-img" id="objectWatchImg">
+          
+          <!-- Light Trace Beam -->
+          <div class="light-trace-beam" id="lightTraceBeam"></div>
+
+          <!-- SVG Connector Lines to Technical Labels -->
+          <svg class="connector-svg-layer" viewBox="0 0 1000 700">
+            <line x1="320" y1="280" x2="160" y2="180" class="connector-line" id="line1" />
+            <circle cx="320" cy="280" r="4" class="connector-dot" id="dot1" />
+            
+            <line x1="500" y1="220" x2="500" y2="90" class="connector-line" id="line2" />
+            <circle cx="500" cy="220" r="4" class="connector-dot" id="dot2" />
+
+            <line x1="680" y1="360" x2="840" y2="460" class="connector-line" id="line3" />
+            <circle cx="680" cy="360" r="4" class="connector-dot" id="dot3" />
+          </svg>
+
+          <!-- Label 1 -->
+          <div class="tech-pin-label label-case" id="techLabel1">
+            <span class="pin-tag">SPEC 01</span>
+            <span class="pin-title">42MM CASE</span>
+            <span class="pin-desc">Grade 5 Champagne Titanium</span>
+          </div>
+
+          <!-- Label 2 -->
+          <div class="tech-pin-label label-sapphire" id="techLabel2">
+            <span class="pin-tag">SPEC 02</span>
+            <span class="pin-title">SAPPHIRE CRYSTAL</span>
+            <span class="pin-desc">Double Anti-Reflective Coating</span>
+          </div>
+
+          <!-- Label 3 -->
+          <div class="tech-pin-label label-precision" id="techLabel3">
+            <span class="pin-tag">SPEC 03</span>
+            <span class="pin-title">AUTOMATIC PRECISION</span>
+            <span class="pin-desc">Caliber ORB-01 In-House</span>
+          </div>
+        </div>
+
+        <div class="left-content-block" style="bottom: 8vh;">
+          <div class="technical-label">02 // PHYSICAL ARCHITECTURE</div>
+          <h2 class="editorial-statement" id="builtStatement">BUILT<br>AROUND<br><span class="accent">TIME</span>.</h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         MECHANICAL MOVEMENT SCENE — EVERY SECOND IS ENGINEERED
+         ========================================================================== -->
+    <section class="hero-scene" id="scene-mechanical" data-bg="#101A2D">
+      <div class="pinned-stage">
+        <div class="mechanical-viewport" data-cursor="explore">
+          <img src="images/orbit-06-movement.jpeg" alt="ORBIT Mechanical Movement" class="mechanical-macro-img" id="mechMacroImg">
+          <div class="mechanical-dark-overlay"></div>
+          <canvas id="mechanical-canvas"></canvas>
+          <div class="precision-scan-line" id="scanLine"></div>
+        </div>
+
+        <div class="specs-annotation-group">
+          <div style="display: flex; justify-content: space-between; width: 100%;">
+            <div class="spec-item" id="specReserve">
+              <span class="spec-val">72H</span>
+              <span class="spec-lbl">POWER RESERVE</span>
+            </div>
+            <div class="spec-item" style="text-align: right;" id="specOscillation">
+              <span class="spec-val">4Hz</span>
+              <span class="spec-lbl">OSCILLATION (28,800 VPH)</span>
+            </div>
+          </div>
+
+          <div class="left-content-block" style="position: relative; left: 0; margin: auto 0;">
+            <div class="technical-label">03 // MECHANICAL HEART</div>
+            <h2 class="editorial-statement" id="mechStatement">EVERY SECOND<br>IS <span class="accent">ENGINEERED</span>.</h2>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; width: 100%;">
+            <div class="spec-item" id="specJewels">
+              <span class="spec-val">28</span>
+              <span class="spec-lbl">SYNTHETIC RUBY JEWELS</span>
+            </div>
+            <div class="spec-item" style="text-align: right;" id="specRotor">
+              <span class="spec-val">BIDIRECTIONAL</span>
+              <span class="spec-lbl">TITANIUM ROTOR</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         ORBITAL FIELD SCENE — PRECISION IN MOTION
+         ========================================================================== -->
+    <section class="hero-scene" id="scene-orbital-field" data-bg="#08111F">
+      <div class="pinned-stage">
+        <div class="spatial-env">
+          <!-- Triple Concentric Orbital Ring SVG with Satellite Marker -->
+          <svg class="spatial-orbital-ring" viewBox="0 0 700 700" id="orbitalSvg">
+            <circle class="ring-circle outer-ring" cx="350" cy="350" r="320" />
+            <circle class="ring-circle mid-ring" cx="350" cy="350" r="260" />
+            <circle class="ring-circle lock-ring" cx="350" cy="350" r="200" id="ringCircleLock" />
+            
+            <!-- Satellite Orbit Markers -->
+            <circle cx="350" cy="30" r="6" class="satellite-dot" fill="#B8A27A" id="satDot1" />
+            <circle cx="670" cy="350" r="4" class="satellite-dot" fill="#8FA9C4" id="satDot2" />
+          </svg>
+
+          <!-- Ambient Radial Halo -->
+          <div class="orbital-ambient-halo" id="orbitalHalo"></div>
+
+          <div class="floating-watch-wrapper" data-cursor="explore">
+            <img src="images/orbit-09-macro.jpeg" alt="ORBIT Floating Watch" class="floating-watch-img" id="orbitalWatchImg">
+          </div>
+        </div>
+
+        <!-- Left Editorial Statement -->
+        <div class="left-content-block" style="bottom: 12vh;">
+          <div class="technical-label">04 // ORBITAL DYNAMICS</div>
+          <h2 class="editorial-statement" id="orbitalStatement">PRECISION<br>IN <span class="accent">MOTION</span>.</h2>
+        </div>
+
+        <!-- Lower Right Telemetry Specs -->
+        <div class="orbital-telemetry-specs" id="orbitalTelemetry">
+          <span class="tele-item">360° TITANIUM AXIS</span>
+          <span class="dot-sep">•</span>
+          <span class="tele-item">ORBITAL ECLIPSE LOCK</span>
+          <span class="dot-sep">•</span>
+          <span class="tele-item">ASTRONOMICAL CADENCE</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         MATERIAL JOURNEY SCENE — EVERY MATERIAL HAS A PURPOSE
+         ========================================================================== -->
+    <section class="hero-scene" id="scene-material-journey" data-bg="#070B14">
+      <div class="pinned-stage">
+        <div class="material-text-content">
+          <div class="technical-label">05 // MATERIAL PURITY</div>
+          <h2 class="editorial-statement" id="materialStatement">EVERY MATERIAL<br>HAS A <span class="accent">PURPOSE</span>.</h2>
+        </div>
+
+        <div class="material-viewport" data-cursor="explore" id="materialViewport">
+          <!-- Dark Contrast Vignette -->
+          <div class="material-dark-vignette"></div>
+
+          <!-- Slide 01: Titanium Bezel -->
+          <div class="material-slide active" id="mat-slide-metal">
+            <img src="images/orbit-04-bezel.jpeg" alt="Champagne Titanium Bezel" class="material-img" id="imgMetal">
+            <div class="material-light-sheen"></div>
+            <div class="material-slide-caption">
+              <span class="cap-num">01</span>
+              <div class="cap-details">
+                <span class="cap-title">TITANIUM BEZEL</span>
+                <span class="cap-desc">Grade 5 Titanium • 40% Lighter Than Steel • Satin Micro-Bead Finish</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 02: Sapphire Crystal -->
+          <div class="material-slide" id="mat-slide-sapphire">
+            <img src="images/03-sapphire-macro.jpg" alt="Sapphire Crystal Edge" class="material-img" id="imgSapphire">
+            <div class="material-light-sheen"></div>
+            <div class="material-slide-caption">
+              <span class="cap-num">02</span>
+              <div class="cap-details">
+                <span class="cap-title">SAPPHIRE CRYSTAL</span>
+                <span class="cap-desc">9 Mohs Hardness Scale • Double Anti-Reflective Inner Coating</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 03: Midnight Dial -->
+          <div class="material-slide" id="mat-slide-dial">
+            <img src="images/orbit-05-dial.jpeg" alt="Midnight Blue Dial" class="material-img" id="imgDial">
+            <div class="material-light-sheen"></div>
+            <div class="material-slide-caption">
+              <span class="cap-num">03</span>
+              <div class="cap-details">
+                <span class="cap-title">MIDNIGHT DIAL</span>
+                <span class="cap-desc">Deep Ocean Navy Finish • Laser-Etched Concentric Guilloché</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 04: Navy Leather -->
+          <div class="material-slide" id="mat-slide-leather">
+            <img src="images/orbit-07-case-strap.jpeg" alt="Navy Leather Strap" class="material-img" id="imgLeather">
+            <div class="material-light-sheen"></div>
+            <div class="material-slide-caption">
+              <span class="cap-num">04</span>
+              <div class="cap-details">
+                <span class="cap-title">NAVY LEATHER</span>
+                <span class="cap-desc">Hand-Stitched Italian Leather • Champagne Titanium Pin Buckle</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Material Switcher Tabs -->
+        <div class="material-nav-dots">
+          <button class="material-dot-btn active" data-material="metal">01 METAL</button>
+          <button class="material-dot-btn" data-material="sapphire">02 SAPPHIRE</button>
+          <button class="material-dot-btn" data-material="dial">03 DIAL</button>
+          <button class="material-dot-btn" data-material="leather">04 LEATHER</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         DIAL SCENE — THE ARCHITECTURE OF A SECOND
+         ========================================================================== -->
+    <section class="hero-scene" id="scene-dial" data-bg="#101A2D">
+      <div class="pinned-stage">
+        <div class="interface-viewport">
+          <canvas id="dial-canvas"></canvas>
+        </div>
+
+        <div class="interface-headline">
+          <div class="technical-label">06 // DIAL CHRONOGRAPHY</div>
+          <h2 class="editorial-statement" id="dialStatement">THE ARCHITECTURE<br>OF A <span class="accent">SECOND</span>.</h2>
+          <p class="editorial-sub">SCROLL TO SCRUB THE SECOND HAND</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         HUMAN WRIST SCENE — TIME CHANGES. MOMENTS REMAIN. (3 DISTINCT VIEWS)
+         ========================================================================== -->
+    <section class="hero-scene" id="scene-human-moment" data-bg="#070B14">
+      <div class="pinned-stage">
+        <!-- 3 Distinct View Slides Container -->
+        <div class="human-views-wrapper">
+          <!-- Dark Vignette Overlay -->
+          <div class="human-dark-vignette"></div>
+
+          <!-- View 01: Morning Light -->
+          <div class="human-view-slide active" id="human-slide-morning">
+            <img src="images/orbit-10-wrist.jpeg" alt="ORBIT Morning Experience" class="human-wrist-img">
+            <div class="human-view-badge">
+              <span class="view-tag">VIEW 01</span>
+              <span class="view-title">MORNING DAWN</span>
+              <span class="view-desc">07:00 AM • Natural Soft Daylight</span>
+            </div>
+          </div>
+
+          <!-- View 02: Golden Hour -->
+          <div class="human-view-slide" id="human-slide-golden">
+            <img src="images/orbit-07-case-strap.jpeg" alt="ORBIT Golden Hour Experience" class="human-wrist-img">
+            <div class="human-view-badge">
+              <span class="view-tag">VIEW 02</span>
+              <span class="view-title">GOLDEN HOUR</span>
+              <span class="view-desc">06:30 PM • Warm Sunset Sheen</span>
+            </div>
+          </div>
+
+          <!-- View 03: Blue Hour / Night -->
+          <div class="human-view-slide" id="human-slide-blue">
+            <img src="images/orbit-09-macro.jpeg" alt="ORBIT Blue Hour Experience" class="human-wrist-img">
+            <div class="human-view-badge">
+              <span class="view-tag">VIEW 03</span>
+              <span class="view-title">BLUE HOUR</span>
+              <span class="view-desc">10:00 PM • Deep Astronomical Ambience</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lighting Phase Indicators -->
+        <div class="lighting-time-indicator">
+          <span class="time-phase-tag active" id="tag-morning">01 MORNING</span>
+          <span class="time-phase-tag" id="tag-golden">02 GOLDEN HOUR</span>
+          <span class="time-phase-tag" id="tag-blue">03 BLUE HOUR</span>
+        </div>
+
+        <!-- Left Content Statement -->
+        <div class="left-content-block" style="bottom: 10vh;">
+          <div class="technical-label">07 // HUMAN TEMPORALITY</div>
+          <h2 class="editorial-statement" id="humanStatement">TIME CHANGES.<br><span class="accent">MOMENTS REMAIN</span>.</h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         FINAL PRODUCT SCENE — ORBIT TIME, REIMAGINED.
+         ========================================================================== -->
+    <section class="hero-scene final-section" id="scene-final-product" data-bg="#05070B">
+      <div class="final-film-container">
+        <div class="final-watch-wrapper" data-cursor="explore" id="finalWatchWrapper">
+          <img src="images/orbit-11-final.jpeg" alt="ORBIT Final Watch" class="final-watch-img" id="finalWatchImg">
+        </div>
+
+        <div class="technical-label" id="finalTechTag">08 // THE HOROLOGICAL ARTIFACT</div>
+        <h2 class="editorial-statement" id="finalStatement">ORBIT TIME,<br><span class="accent">REIMAGINED</span>.</h2>
+        
+        <a href="#scene-hero" class="final-cta-btn" id="finalCtaBtn" data-cursor="open">DISCOVER THE MOVEMENT →</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER — MINIMAL CINEMATIC
+       ========================================================================== -->
+  <footer class="cinematic-footer">
+    <div class="footer-statement">ORBIT TIME, REIMAGINED.</div>
+    <div class="footer-links">
+      <a href="#scene-built-around-time">COLLECTION</a>
+      <a href="#scene-mechanical">MOVEMENT</a>
+      <a href="#scene-material-journey">CRAFT</a>
+      <a href="#scene-hero-transition">THE ORBIT</a>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-credits">DESIGNED & DEVELOPED BY IRTIZAH QADRI</div>
+    <div class="footer-copy">© 2026 ORBIT. ALL RIGHTS RESERVED.</div>
+  </footer>
+
+  <!-- Application Logic JS -->
+  <script src="js/app.js"></script>
+</body>
+</html>
